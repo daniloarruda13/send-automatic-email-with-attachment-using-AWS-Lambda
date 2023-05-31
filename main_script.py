@@ -23,8 +23,8 @@ def lambda_handler(event,context):
 
     #Importing custumer_list objects from S3:
     bucket_name = 'automatic-send-scitraining'
-    s3_client = boto3.client('s3', 'us-east-2')
-    s3 = boto3.resource('s3', 'us-east-2')
+    s3_client = boto3.client('s3', 'us-east-2') #This should match the time zone of your AWS account
+    s3 = boto3.resource('s3', 'us-east-2') #This should match the time zone of your AWS account
     bucket = s3.Bucket(bucket_name)
 
 
