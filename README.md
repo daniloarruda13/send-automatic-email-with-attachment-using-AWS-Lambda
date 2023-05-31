@@ -32,18 +32,12 @@ In order to implement and run the script, the user must enable Gmail API and pro
 
 2.  Make an AWS account;
 
-3.  Create a S3 bucket with the files to be sent as attachment
+3.  Create a S3 bucket with the files to be sent as attachment and the Python script
 
-    1.  Authorize Lambda to access the bucket
+    1.  Authorize Lambda to access the bucket (setting up IAM role - [HERE](https://repost.aws/knowledge-center/lambda-execution-role-s3-bucket))
 
-4.   
+4.  Make a Lambda function by importing the Python script directly from S3 (click upload from)
 
-## Gmail API
+5.  Schedule the script to run at the desired frequency using CloudWatch
 
-The first thing to do is to request authorization from your Gmail. You can do that by enabling the Gmail API. Since the goal of this readme is not to teach how to set up this API, I won't be explaining it. However, there are plenty of tutorials describing how to do it. Like [this](https://www.thepythoncode.com/article/use-gmail-api-in-python).
-
-## Setting up AWS-S3 and Lambda
-
-Amazon Web Services (AWS) is a comprehensive cloud computing platform provided by Amazon.com. For sending our email with attachment, we will be using S3, which is a cloud storage platform, and Lambda, which allows us to run scripts periodically. Also, you can make an account and use most of AWS services for free.
-
-After you created an account, go to the S3 website and create a bucket (also, plenty of videos showing how to set that up). In the bucket you should include the files that you intend to send as attachment to your emails. In addition, you have to authorize S3 to connect to your Lambda
+In addition, make sure to properly edit the script including the info about your API and specific bucket.
