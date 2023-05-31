@@ -12,7 +12,7 @@
 <meta name="author" content="Danilo Arruda" />
 
 
-<title>send-automatic-email-with-attachment-using-AWS-Lambda-and-S3</title>
+<title>Sending automatic emails with attachment using Python, AWS-Lambda and S3</title>
 
 <script>// Pandoc 2.9 adds attributes on both header and div. We remove the former (to
 // be compatible with the behavior of Pandoc < 2.8).
@@ -1708,7 +1708,8 @@ display: none;
 
 
 
-<h1 class="title toc-ignore">send-automatic-email-with-attachment-using-AWS-Lambda-and-S3</h1>
+<h1 class="title toc-ignore">Sending automatic emails with attachment
+using Python, AWS-Lambda and S3</h1>
 <h4 class="author">Danilo Arruda</h4>
 <h4 class="date">May, 2023</h4>
 
@@ -1718,22 +1719,38 @@ display: none;
 <ul>
 <li><a href="#overview" id="toc-overview">Overview</a>
 <ul>
-<li><a href="#gmail-api" id="toc-gmail-api">Gmail API</a></li>
+<li><a href="#installation" id="toc-installation">Installation</a></li>
 </ul></li>
 </ul>
 </div>
 
 <div id="overview" class="section level1">
 <h1>Overview</h1>
-<p>This script is designed to send products to customers via email upon
-purchase using paypal. It receives the notification from paypal and send
-the corresponding email with attachment. This files walks you through
-the process to implement this tool: setting up Gmail API, setting up
-AWS-S3 and Lambda, building an script, and scheduling runs using Cloud
-Watch.</p>
-<div id="gmail-api" class="section level2">
-<h2>Gmail API</h2>
-<p>asdasd</p>
+<p>This script is designed to automatically send an email if specific
+criteria are met. In the case of the example, the script searches for
+emails from Paypal notifying that a customer bought a virtual product
+and then it sends email to the customer with the product attached.</p>
+<div id="installation" class="section level2">
+<h2>Installation</h2>
+<p>In order to implement and run the script, the user must enable Gmail
+API and properly set up the AWS services: S3, Lambda, and Cloud Watch.
+In general, setting up the services are straight forward. In general the
+workflow is as follows:</p>
+<ol style="list-style-type: decimal">
+<li><p>Enable Gmail API;</p></li>
+<li><p>Make an AWS account;</p></li>
+<li><p>Create a S3 bucket with the files to be sent as attachment and
+the Python script</p>
+<ol style="list-style-type: decimal">
+<li>Authorize Lambda to access the bucket (setting up IAM role - <a href="https://repost.aws/knowledge-center/lambda-execution-role-s3-bucket">HERE</a>)</li>
+</ol></li>
+<li><p>Make a Lambda function by importing the Python script directly
+from S3 (click upload from)</p></li>
+<li><p>Schedule the script to run at the desired frequency using
+CloudWatch</p></li>
+</ol>
+<p>In addition, make sure to properly edit the script including the info
+about your API and specific bucket.</p>
 </div>
 </div>
 
