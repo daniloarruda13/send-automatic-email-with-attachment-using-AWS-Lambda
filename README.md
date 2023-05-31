@@ -8,7 +8,6 @@ output:
     toc_depth: '3'
     df_print: paged
     warning: false
-    code_folding: hide
   word_document:
     toc: yes
     toc_depth: '3'
