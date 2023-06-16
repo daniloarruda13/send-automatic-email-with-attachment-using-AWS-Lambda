@@ -25,7 +25,7 @@ This script is designed to automatically send an email if specific criteria are 
 
 ## Installation
 
-In order to implement and run the script, the user must enable Gmail API and properly set up the AWS services: S3, Lambda, and Cloud Watch. In general, setting up the services are straight forward. In general the workflow is as follows:
+In order to implement and run the script, the user must enable Gmail API and properly set up the AWS services: S3, Lambda, and Cloud Watch. In general, setting up the services are straight forward. The workflow is as follows:
 
 1.  Enable Gmail API;
 
